@@ -87,6 +87,7 @@ let Run (req:HttpRequestMessage, log:TraceWriter) =
     log.Info(sprintf "Matching image from %s" imageUrl)
     let bytes = getImage imageUrl
 
-    getFaces bytes
-    |> drawImage bytes
+    //getFaces bytes
+    //|> drawImage bytes
+    bytes
     |> createResponse
