@@ -83,8 +83,6 @@ let createResponse bytes =
     new HttpResponseMessage(StatusCode = HttpStatusCode.OK, Content = content)
 
 let Run (req:HttpRequestMessage, log:TraceWriter) =
-    log.Info(sprintf "apiKey is %s" apiKey)
-    log.Info(sprintf "appPath is %s" appPath)
     let imageUrl = getImageUrl req
     log.Info(sprintf "Matching image from %s" imageUrl)
     let bytes = getImage imageUrl
