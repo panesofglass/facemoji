@@ -48,7 +48,7 @@ let getImage url =
 let getFaces bytes =
     Http.RequestString("https://api.projectoxford.ai/emotion/v1.0/recognize",
         httpMethod = "POST",
-        headers = [ "Ocp-Apim-SubscriptionKey", apiKey ],
+        headers = [ "Ocp-Apim-Subscription-Key", apiKey ],
         body = BinaryUpload bytes)
     |> fun json -> JsonConvert.DeserializeObject<Face[]>(json)
 
